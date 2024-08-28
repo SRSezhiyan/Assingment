@@ -1,0 +1,48 @@
+Round 1 Assingment:
+
+Question: Write a query to find the countries with the highest temperatures in the dataset.
+SELECT COUNTRY, MAX(TEMPERATURE) AS HIGHEST_TEMPERATURE
+FROM COUNTRY_POLLUTION
+GROUP BY COUNTRY
+ORDER BY MAX(TEMPERATURE) DESC;
+
+Question: Write a query to identify the countries with the lowest CO2 emissions in the dataset.
+SELECT TOP (1) COUNTRY, MIN(CO2_EMISSION) AS LOWEST_CO2_EMISSION
+FROM COUNTRY_POLLUTION
+GROUP BY COUNTRY
+ORDER BY MIN(CO2_EMISSION) ASC;
+
+Question: Write a query to find all temperature records above a specific value, for example, 20 degrees Celsius.
+SELECT TEMPERATURE 
+FROM COUNTRY_POLLUTION 
+WHERE TEMPERATURE > 20;
+
+Question: Write a query to list all countries with CO2 emissions data available for the year 2020.
+SELECT COUNTRY
+FROM COUNTRY_POLLUTION 
+WHERE YEAR = '2020';
+
+Question: Write a query to count the total number of temperature records in the dataset.
+SELECT COUNT(TEMPERATURE) AS TOTAL_COUNT 
+FROM COUNTRY_POLLUTION;
+
+Question: Write a query to identify any countries with missing temperature data for a specific year, for example, 2015.
+SELECT COUNTRY 
+FROM COUNTRY_POLLUTION 
+WHERE YEAR = '2015' AND TEMPERATURE IS NULL;
+
+Question: Write a query to find the average temperature for each year in the dataset.
+SELECT YEAR, AVG(TEMPERATURE) AS AVERAGE_TEMPERATURE 
+FROM COUNTRY_POLLUTION 
+GROUP BY YEAR;
+
+Question: Write a query to calculate the total CO2 emissions for all countries in the dataset.
+SELECT COUNTRY,
+SUM(CO2_EMISSION) AS TOTAL_EMISSION
+FROM COUNTRY_POLLUTION
+GROUP BY COUNTRY;
+
+Question: Write a query to sort the temperature data in descending order based on the temperature values.
+SELECT TEMPERATURE 
+FROM COUNTRY_POLLUTION 
+ORDER BY TEMPERATURE DESC;
