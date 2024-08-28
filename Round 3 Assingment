@@ -1,5 +1,53 @@
 Round 3 Assingment:
 
+SQL:
+
+1.
+
+SELECT 
+    CONCAT(CUSTOMER.FIRSTNAME, ' ', CUSTOMER.LASTNAME) AS FULLNAME,
+    ADDRESS.CITY,
+    SALES.AMOUNT
+FROM 
+    SALES
+JOIN 
+    CUSTOMER ON SALES.CUSTOMERID = CUSTOMER.ID
+JOIN 
+    ADDRESS ON SALES.CITYID = ADDRESS.ID
+JOIN 
+    CUSTOMER AS MOTHER ON CUSTOMER.MOTHERIDNUMBER = MOTHER.IDNUMBER
+WHERE 
+    MOTHER.EYE_COLOR = 'BROWN';
+
+
+2.
+
+SELECT 
+    U.FIRSTNAME, 
+    U.LASTNAME
+FROM 
+    [USER] U
+JOIN 
+    (SELECT 
+         O.USERID, 
+         COUNT(O.COURSEID) AS COURSECOUNT
+     FROM 
+         [ORDER] O
+     GROUP BY 
+         O.USERID
+     HAVING 
+         COUNT(O.COURSEID) >= 3) AS OC
+ON 
+    U.ID = OC.USERID;
+
+
+3.
+
+The result is 500 and client name is Miro
+
+
+
+Python :
 
 1.Tuple in Python: A tuple is an immutable sequence of values, defined using parentheses ( ). Unlike lists, tuples cannot be modified after creation. Lists are mutable and defined with square brackets [ ], allowing changes to their contents.
 
