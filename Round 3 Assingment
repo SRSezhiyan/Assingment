@@ -1,0 +1,35 @@
+Round 3 Assingment:
+
+
+1.Tuple in Python: A tuple is an immutable sequence of values, defined using parentheses ( ). Unlike lists, tuples cannot be modified after creation. Lists are mutable and defined with square brackets [ ], allowing changes to their contents.
+
+2.Local vs Global Variables: Local variables are defined inside a function and can only be accessed within that function. Global variables are defined outside any function and can be accessed from anywhere in the code. Using the global keyword allows a function to modify a global variable.
+
+3.Parameter Passing Mechanism: Python uses "pass-by-object-reference," meaning it passes references to objects, not the objects themselves. If the object is mutable, changes made to it within a function will affect the original object. For immutable objects, a new object is created in the function.
+
+4.Method to Open and Display a Text File:
+def text_file(filename): 
+    with open(filename, 'r') as file:
+        content = file.read()
+        print(content)
+
+5.
+strList = ["Vishesh", "For", "Python"]
+valList = [1, 2]
+result = {'key2': strList, 'key1': valList}
+print(result)
+
+output - {'key2': ['Vishesh', 'For', 'Python'], 'key1': [1, 2]}
+
+strList = ["Vishesh", "For", "Python"]
+valList = [1, 2]
+result = {'key1': [valList[0], valList[1], strList]}
+print(result)
+
+output - {'key1': [1, 2, ['Vishesh', 'For', 'Python']]}
+
+valList = [1, 2, 3]
+result = {str(i): [valList[i-1], valList[i-1]+1] for i in range(1, 4)}
+print(result)
+
+output - {'1': [1, 2], '3': [3, 4], '2': [2, 3]}
